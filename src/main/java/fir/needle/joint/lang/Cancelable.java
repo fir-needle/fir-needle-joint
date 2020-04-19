@@ -25,5 +25,6 @@ package fir.needle.joint.lang;
 
 public interface Cancelable {
 
-    void cancel() throws InterruptedException;
+    Future<VoidResult> cancel();
+
 }
