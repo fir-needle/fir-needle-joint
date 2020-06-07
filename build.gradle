@@ -24,6 +24,8 @@ allprojects {
 
     checkstyle {
         toolVersion = '8.25'
+//        configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+        configDir = file("${rootDir}/config/checkstyle")
     }
 }
 
@@ -40,6 +42,14 @@ jar {
         attributes 'Implementation-Title': projectName,
                 'Implementation-Version': projectVersion,
                 'Implementation-Vendor' : projectAuthor
+    }
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat = 'full'
     }
 }
 
